@@ -1,0 +1,34 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab02</title>
+</head>
+<body>
+    <h3>Lab 02</h3>
+    <script>
+           // Kiểm Tra Số Nguyên Tố
+           function isNguyenTo(n){
+               if(n<0 || n == 1){
+                console("Vui Lòng Kiểm Tra Lại")
+               }
+               else
+                {
+                var check = true ;
+                  for(var i = 2 ; i < Math.sqrt(n);i++){
+                    if(n%i==0){
+                        console.log("Số Này Không Phải là Số Nguyên tố");
+                        check = false ;
+                        break;
+                    }
+                  }
+                  if(check==true){
+                    console.log("Số Này Là Số Nguyên Tố ")
+                  }
+               }
+           } 
+           isNguyenTo(4);
+
+    </script>
+</body> 
+</html>

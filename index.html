@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>lab01</title>
+</head>
+
+<body>
+  <script>
+    /* Bài Tập JS ngày 17/01/2024*/
+
+    // switch case
+    var x = 5;
+    switch (x) {
+      case 2:
+        console.log("Thứ 2");
+        break;
+      case 3:
+        console.log("Thứ 3");
+        break;
+      case 4:
+        console.log("Thứ 4");
+        break;
+      case 5:
+        console.log("Thứ 5");
+        break;
+      case 6:
+        console.log("Thứ 6");
+        break;
+      case 7:
+        console.log("Thứ 7");
+        break;
+      case 8:
+        console.log("Chủ Nhật");
+        break;
+      default:
+        console.log("vui lòng Kiểm Tra giá trị đầu vào");
+        break;
+    }
+  </script>
+  <script>
+    // switch case + arr
+    var arraysThoiKhoaBieu = [
+      "Thứ 2",
+      "Thứ 3",
+      "Thứ 4",
+      "Thứ 5",
+      "Thứ 6",
+      "Thứ 7",
+      "Chủ Nhật",
+    ];
+
+    var x = 7;
+    switch (x) {
+      case 2:
+        console.log(arraysThoiKhoaBieu[arraysThoiKhoaBieu.length - 7]);
+        break;
+      case 3:
+        console.log(arraysThoiKhoaBieu[arraysThoiKhoaBieu.length - 6]);
+        break;
+      case 4:
+        console.log(arraysThoiKhoaBieu[arraysThoiKhoaBieu.length - 5]);
+        break;
+      case 5:
+        console.log(arraysThoiKhoaBieu[arraysThoiKhoaBieu.length - 4]);
+        break;
+      case 6:
+        console.log(arraysThoiKhoaBieu[arraysThoiKhoaBieu.length - 3]);
+        break;
+      case 7:
+        console.log(arraysThoiKhoaBieu[arraysThoiKhoaBieu.length - 2]);
+        break;
+      case 8:
+        console.log(arraysThoiKhoaBieu[arraysThoiKhoaBieu.length - 1]);
+        break;
+      default:
+        console.log(arraysThoiKhoaBieu[arraysThoiKhoaBieu.length - 0]);
+        break;
+    }
+  </script>
+
+  <script>
+    // Kiểm Tra Số Nguyên Tố
+    function isNguyenTo(n) {
+      if (n <= 1) {
+        console.log("Vui Lòng Kiểm Tra Lại")
+      }
+      else {
+        var check = true;
+        for (var i = 2; i <= Math.sqrt(n); i++) {
+          if (n % i == 0) {
+            console.log("Số Này Không Phải là Số Nguyên Tố");
+            check = false;
+            break;
+          }
+        }
+        if (check == true) {
+          console.log("Số Này Là Số Nguyên Tố ")
+        }
+      }
+    }
+    isNguyenTo(4);
+  </script>
+  <script>
+    var matrix = [
+      [1, 1, 0], [1, 0, 1], [0, 1, 1]
+    ]
+    for (var i = 0; i < matrix.length; i++) {
+      for (var j = 0; j < matrix.length; j++) {
+        document.write(matrix[i][j])
+      }
+      document.write(" <br>")
+    }
+
+  </script>
+  <script>
+    // Hàm Check Regex
+    function ValidateEmail(mail) {
+      if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail)) {
+        return (true)
+      }
+      alert("You have entered an invalid email address!")
+      return (false)
+    }
+    if(ValidateEmail("ductrantad23@gmail.com")){
+      setTimeout(()=>{
+        alert("Bạn Đã Nhận Đúng Email");
+        console.log("Sucess!")
+      },2000)
+    }
+    else{
+      setTimeout(()=>{
+        alert("Vui Lòng Xem Lại Email");
+        console.log("Error!")
+      },2000)
+    }
+  </script>
+  <script>
+    // Check Pass JavaScript
+    function validatePassword(password) {
+    if( /^[a-zA-Z0-9!@#$%^&*]{6,12}$/.test(password)){
+      return true ;
+    }
+    return false;
+  }
+    if(validatePassword("")){
+      console.log("Thành Công");
+    }
+    else {
+      console.log('Thất Bại')
+    }
+   
+
+  </script>
+</body>
+
+</html>
