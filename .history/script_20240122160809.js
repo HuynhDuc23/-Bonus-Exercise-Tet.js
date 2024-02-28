@@ -21,6 +21,7 @@ btn.addEventListener('click',function(){
      console.log(getPassword);
      if(getEmail && getPassword){
          if(isValidationFormEmail(getEmail)&&isValidationFormPassword(getPassword)){
+            console.log("Sucess!")
              for(var i = 0 ; i < listUser.length ;i++){
                 console.log(listUser[i].user);
                 console.log(listUser[i].password);
