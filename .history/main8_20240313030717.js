@@ -49,6 +49,5 @@
 //     return `${this.firstName}${this.lastName}`;
 //   },
 // };
-
 // // kĩ thuật mượn hàm từ một hàm khác : call() có luôn bind this
 // console.log(me.getFullName.call(teacher));
