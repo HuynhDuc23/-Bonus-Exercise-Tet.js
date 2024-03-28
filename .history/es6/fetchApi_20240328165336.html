@@ -1,0 +1,39 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="products">
+        <div class="item">
+            <h1>title</h1>
+            <p>Param</p>
+            <h2>Category</h2>
+        </div>
+    </div>
+
+    <script>
+        fetch('https://dummyjson.com/products')
+            .then(data => data.json())
+            .then(data => {
+                console.log(data.products);
+                const getProducts = document.querySelector(".products");
+                let pro = data.products.map(item => {
+                    return `
+                    <div class="item">
+                  <h1>title</h1>
+                  <p>Param</p>
+                  <h2>Category</h2>
+           </div>
+                         
+                    `
+                })
+
+            })
+    </script>
+</body>
+
+</html>

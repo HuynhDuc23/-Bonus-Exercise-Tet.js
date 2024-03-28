@@ -1,0 +1,36 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p class="test">0
+    </p>
+    <script type="text/javascript">
+        var demNguoc = 10;
+        let test = document.querySelector(".test");
+        let dongHo = () => {
+            setInterval(() => {
+                if (demNguoc == 0) {
+                    test.innerHTML = 0;
+                    clearInterval(dongHo);
+                    //alert('STOPPPPPPPPPPPPPPPPPPPP');
+                    return;
+
+                }
+                else {
+                    test.innerHTML = demNguoc;
+                    demNguoc--;
+                }
+
+            }, 1000);
+        }
+        dongHo();
+
+    </script>
+</body>
+
+</html>

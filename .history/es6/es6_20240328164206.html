@@ -1,0 +1,155 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // const MY_CONSTANT = 1;
+        // // MY_CONSTANT = 2; // error ;
+        // // const SOME_CONST; // error , because initalization
+        // const MY_OBJECT = {
+        //     some: 1
+        // }
+        // MY_OBJECT.some = 'HelloWorld';
+        // console.log(MY_OBJECT.some); // Works
+
+        // // ex2 : Block Scope Variables
+        // // let keywords
+        // var tmp = "123";
+        // if (true) {
+        //     var tmp = "567";
+        // }
+        // console.log(tmp); // "567";
+
+        // let tmp = "123";
+        // if (true) {
+        //     let tmp = "567"; // error tmp allready declared here
+        // }
+        // // block scope
+
+        // if (true) {
+        //     let tmp = "567";
+        // }
+        // console.log(tmp);
+
+        // arrows function
+        // var isEven = function(num){
+        //     return num % 2 == 0 ;
+        // }
+        // var isEven2 =num => num%2==0
+        // // sum two number
+        // var add =  function (a,b){
+        //     return a+b;
+        // }
+        // var add2 = (a,b)=>a+b;
+
+        // var log =  function (val){
+        //     val = `Hello ${val}`;
+        //     console.log(val)
+
+        // }
+        // var log2 = val =>{
+        //     val = `Hello ${val}`;
+        //     console.log(val);
+        // }
+
+        // function parameter
+        // old
+        function list(name) {
+            var entries = Array.prototype.slice.call(arguments, 1);
+            return "The List " + name + "has";
+            entries.length + " entries";
+        }
+        // new 
+        function list(name, ...entries) {
+            return "The List " + name + "has";
+            entries.length + " entries";
+        }
+        // call
+        list("Tim", "Fred", "Marlin", "Ben");
+
+        // new 
+        function say(text, name = "Unknoew") {
+            console.log(name + ":" + text);
+        }
+
+        // Enhanced object properties 
+        let first_name = "join";
+        let last_name = "Doe";
+        // old 
+        var obj = {
+            first_name: first_name,
+            last_name: last_name
+        }
+        // new 
+        var obj = {
+            first_name,
+            last_name,
+        }
+
+        // old
+        var foo = {
+            bar: function () {
+                return 5;
+            }
+        }
+        // new
+        var foo2 = {
+            bar() {
+                return 5;
+            }
+        }
+
+        // Destructuring
+        var test = [1, 2, 3];
+        var [a, b, c] = test; // a =  1 , b = 2 , c= 3 ;
+        [a, b] = [b, c]; //
+
+        var test2 = {
+            first_name1: "JOIN",
+            last_name1: "Doe",
+        }
+        var { first_name1, last_name1 } = test2;
+        var {
+            first_name2: fname,
+            last_name2: lname
+        } = test2; // lame = "JOIn"
+        // Classs
+        class test1 {
+            constructor(name) {
+                this.name = name;
+            }
+            getName() {
+                return this._name;
+            }
+        }
+        class test2 extends test1 {
+            constructor(name) {
+                super(name);
+            }
+        }
+        // Template strings
+        var elements = [1, 2, 3];
+        // old
+        var text = "There are" + elements.length + "elements\n"
+            + "(" + elements.join(",") + ")";
+
+        // new 
+        var text = `There are ${elements.length} elements (${elements.join(",")})`;
+
+
+        // Extended literals
+        // old
+        parseInt("111110111", 2) === 503;
+        parseInt("767", 8) === 503;
+        // new 
+        0b111110111 === 503;
+        0o767 === 503
+    </script>
+</body>
+
+</html>

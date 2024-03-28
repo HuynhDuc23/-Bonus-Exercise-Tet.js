@@ -1,0 +1,41 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const MY_CONSTANT = 1;
+        // MY_CONSTANT = 2; // error ;
+        // const SOME_CONST; // error , because initalization
+        const MY_OBJECT = {
+            some: 1
+        }
+        MY_OBJECT.some = 'HelloWorld';
+        console.log(MY_OBJECT.some); // Works
+
+        // ex2 : Block Scope Variables
+        // let keywords
+        var tmp = "123";
+        if (true) {
+            var tmp = "567";
+        }
+        console.log(tmp); // "567";
+
+        let tmp = "123";
+        if (true) {
+            let tmp = "567"; // error tmp allready declared here
+        }
+        // block scope
+
+        if (true) {
+            var tmp = "567";
+        }
+        console.log(tmp);
+    </script>
+</body>
+
+</html>

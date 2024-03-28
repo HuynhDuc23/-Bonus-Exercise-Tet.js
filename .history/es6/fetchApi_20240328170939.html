@@ -1,0 +1,38 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="products">
+    </div>
+
+    <script>
+        const api = 'https://dummyjson.com/products'
+        fetch(api)
+            .then(data => data.json())
+            .then(data => {
+                console.log(data.products);
+                var htmls = data.products.map(item => {
+                    return
+                    `
+                    <div class="item">
+                        <h1>${item.title}</h1>
+                        <p>${item.description}</p>
+                        <h2>${item.category}</h2>
+                    </div>
+                    `
+                })
+                console.log(htmls);
+                var html = htmls.join('');
+                console.log(html);
+                document.querySelector(".products").innerHTML = html;
+
+            })
+    </script>
+</body>
+
+</html>

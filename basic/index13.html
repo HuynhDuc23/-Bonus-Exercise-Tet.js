@@ -1,0 +1,41 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        .pixel {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            width: 2px;
+            height: 2px;
+            background-color: red;
+        }
+    </style>
+
+</head>
+
+<body>
+    <script type="text/javascript">
+        var timer = window.setTimeout("drawSine()", 10);
+        var x = 0.0;
+        function drawSine() {
+            var y = Math.sin(Math.PI * x++ / 100.0) * 100 + 200;
+            drawPixel(x, y);
+            window.setTimeout("drawSine()", 10)
+        }
+        function drawPixel(x, y) {
+            var newDiv = document.createElement("div");
+            newDiv.className = "pixel";
+            newDiv.style.top = y;
+            newDiv.style.left = x;
+            document.body.appendChild(newDiv);
+        }
+    </script>
+</body>
+
+</html>
+
+<!-- Ve -->
